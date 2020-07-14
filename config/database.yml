@@ -11,3 +11,15 @@ default: &default
   host: <%= ENV["#{db_service}_SERVICE_HOST"] %>
   port: <%= ENV["#{db_service}_SERVICE_PORT"] %>
   database: <%= ENV["POSTGRESQL_DATABASE"] %>
+
+development:
+  <<: *default
+  database: <%= "#{ENV['POSTGRESQL_DATABASE']}_development" %>
+
+test:
+  <<: *default
+  database: <%= "#{ENV['POSTGRESQL_DATABASE']}_test" %>
+
+production:
+  <<: *default
+  database: <%= "#{ENV['POSTGRESQL_DATABASE']}_production" %>
