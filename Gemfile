@@ -74,6 +74,9 @@ else
   warn("Please configure your config/database.yml first")
 end
 
+# app server
+gem 'puma'
+
 group :development do
   gem "yard"
 end
@@ -84,7 +87,6 @@ group :test do
   gem 'simplecov', (RUBY_VERSION < '2.4' ? '~> 0.17.0' : '~> 0.18.5'), :require => false
   gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
   # For running system tests
-  gem 'puma'
   gem 'capybara', (RUBY_VERSION < '2.4' ? '~> 3.15.1' : '~> 3.31.0')
   gem "selenium-webdriver"
   # RuboCop
